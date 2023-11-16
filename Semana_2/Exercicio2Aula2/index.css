@@ -16,15 +16,27 @@ p{
     font-family: "Oswald", sans-serif;
     font-weight: bold;
 }
-#giallo{
+.giallo{
+    color: #D6A91A;
+}
+.qgiallo{
     background-color: #D6A91A;
 }
-#rosso{
+.rosso{
+    color: #E2130C;
+}
+.qrosso{
     background-color: #E2130C;
 }
-#blue{
+.blue{
+    color: #3FCEF6;
+}
+.qblue{
     background-color: #3FCEF6;
 }
-#marrone{
+.marrone{
+    color: #CCAF89;
+}
+.qmarrone{
     background-color: #CCAF89;
 }
