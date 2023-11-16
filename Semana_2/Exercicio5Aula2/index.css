@@ -1,0 +1,18 @@
+h1[name="amarelo"], h4[name="amarelo"]{
+    color:goldenrod;
+}
+p[name="azul"]{
+    color:blue;
+}
+p[name="azul_claro"]{
+    color:aqua
+}
+li[name="bege"]{
+    color:burlywood;
+}
+li[name="verde"]{
+    color:chartreuse;
+}
+li[name="roxo"]{
+    color: blueviolet;
+}
