@@ -1,0 +1,52 @@
+.quadrado-azul{
+    background-color: rgb(57, 18, 129);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.circulo-azul{
+    background-color: rgb(57, 18, 129);
+    border-radius: 70%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 120px;
+}
+.quadrado-vermelho{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    top: 230px;
+}
+.quadrado-amarelo{
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    top: 10px;
+    position: relative;
+}
+.retangulo-roxo{
+    border: 2px solid purple;
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    top: 340px;
+    left: 10px;
+}
+.retangulo-preto{
+    border: 2px solid black;
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+p{
+    margin: 0px;
+}
