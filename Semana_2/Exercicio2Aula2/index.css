@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quadrado{
+    width: 150px;
+    height: 150px;
+}
+p{
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+}
+#giallo{
+    background-color: #D6A91A;
+}
+#rosso{
+    background-color: #E2130C;
+}
+#blue{
+    background-color: #3FCEF6;
+}
+#marrone{
+    background-color: #CCAF89;
+}
