@@ -1,0 +1,24 @@
+body{
+    font-family: serif;
+    font-size: 14pt;
+    font-weight: bold;
+}
+.div-geral{
+    background-color: blue;
+    border: 10px solid purple;
+    display: flex;
+    flex-direction: column;
+}
+.div-interior{
+    font-size: 12pt;
+    margin: 10px;
+}
+p[name="branco"]{
+    color: white;
+    background-color: red;
+    margin: 0px;
+}
+p[name="amarelo"]{
+    color: yellow;
+    margin: 0px;
+}
