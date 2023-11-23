@@ -1,0 +1,15 @@
+body{display: flex;flex-direction: row;gap: 50px;}
+.container-1 img{
+    width: 200px;
+    height: 200px;
+}
+.container-2 img[name="imagem1"]{
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+.container-2 img[name="imagem2"]{
+    width: 200px;
+    height: 200px;
+    float: left;
+}
