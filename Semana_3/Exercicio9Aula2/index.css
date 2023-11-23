@@ -1,0 +1,60 @@
+body {
+    padding: 15px;
+    margin: 0;
+    background-color: bisque;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div[name="verde"] {
+    background-color: green;
+}
+
+div[name="vermelho"] {
+    background-color: red;
+}
+
+div[name="roxo"] {
+    background-color: purple;
+}
+
+div[name="marrom"] {
+    background-color: brown;
+}
+
+div[name="marromClaro"] {
+    background-color: tomato;
+}
+
+.grid-container {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 70% 30%;
+    gap: 10px;
+}
+
+.grid-item-1-1 {
+    display: grid;
+    padding: 10px;
+    grid-template-rows: 50px 50px 300px 50px;
+    gap: 10px;
+}
+
+.grid-item-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-item-1-2 {
+    display: grid;
+    padding: 10px;
+}
+
+.grid-item-3{
+    padding: 10px;
+}
+
+.grid-item-4{
+    padding: 10px;
+}
