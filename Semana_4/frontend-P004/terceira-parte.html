@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terceira Parte</title>
+    <link rel="stylesheet" href="terceira-parte.css">
+</head>
+
+<body>
+    <form action="terceira-parte.html" method="get">
+        <label for="cidade">
+            <p>Cidade:</p>
+            <input type="text" name="cidade" id="cidade">
+        </label>
+        <label for="roteiro1">
+            <p>Roteiros 1:</p>
+            <input type="text" name="roteiro1" id="roteiro1">
+        </label>
+        <label for="roteiro2">
+            <p>Roteiros 2:</p>
+            <input type="text" name="roteiro2" id="roteiro2">
+        </label>
+        <label for="roteiro3">
+            <p>Roteiros 3:</p>
+            <input type="text" name="roteiro3" id="roteiro3">
+        </label>
+        <label for="preco">
+            <p>Preço:</p>
+            <input type="text" name="preco" id="preco">
+        </label>
+        <label for="imagemUrl">
+            <p>Url Imagem:</p>
+            <input type="text" name="imagemUrl" id="imagemUrl">
+        </label>
+        <input onclick="criarCard()" class="input-botao" value="Enviar">
+    </form>
+
+    <hr>
+    <div class="cards"></div>
+    <script src="terceira-parte.js"></script>
+</body>
+
+</html>

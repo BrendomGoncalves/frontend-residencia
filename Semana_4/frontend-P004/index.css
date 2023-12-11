@@ -25,6 +25,10 @@ body {
   line-height: 0;
 }
 
+.card:hover{
+  background-color: #dbc3ff;
+}
+
 .image-card {
   width: 100%;
   height: 90px;
@@ -72,6 +76,7 @@ body {
 
 .botao-card:hover{
   border: 1px solid white;
+  background-color: rgb(109, 185, 33);
   font-weight: bold;
 }
 
@@ -80,6 +85,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 10pt;
   text-decoration: none;
+  cursor: grab;
 }
 
 @media (max-width: 1200px) {
