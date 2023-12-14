@@ -1,0 +1,23 @@
+<body>
+    <p>{{nome}}</p>
+    <div class="div-araras">
+        <img class="img-arara"
+            src="https://th.bing.com/th/id/R.7b00dbeb724567cc2bf79d88a0bd6ffd?rik=xSEtzdSFWQsxtQ&riu=http%3a%2f%2fwww.infoescola.com%2fwp-content%2fuploads%2f2016%2f08%2farara-vermelha-634196858.jpg&ehk=BJHEFsC5F5xDpYPSombFMn6mkvRFZEDMwJku8SU8%2bg0%3d&risl=&pid=ImgRaw&r=0">
+        <img class="img-arara"
+            src="https://th.bing.com/th/id/R.824fd0de2e53fb42db5fca6e9a0935c3?rik=A4skwYjY0Dmf7w&riu=http%3a%2f%2finfoescola.com%2fwp-content%2fuploads%2f2016%2f08%2farara-azul-635338985.jpg&ehk=s%2bL0Yw3DfFu4T8cA0ZRZ2TuifBcj0kouMU9yw0KbPWw%3d&risl=&pid=ImgRaw&r=0">
+    </div>
+    <button (click)="onClick()" (mouseenter)="onHover()" class="button" data-text="Awesome">
+        <span class="actual-text">&nbsp;Clique!&nbsp;</span>
+        <span aria-hidden="true" class="hover-text">&nbsp;Clique!&nbsp;</span>
+    </button>
+    <table>
+        <tr>
+            <th>Passou o mouse</th>
+            <th>Clicou o botão</th>
+        </tr>
+        <tr>
+            <th>{{qClick}}</th>
+            <th>{{qHover}}</th>
+        </tr>
+    </table>
+</body>
