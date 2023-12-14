@@ -1,0 +1,8 @@
+<body>
+    <label for="txtEventoParametro"><p>Digite um texto:</p></label>
+    <div>
+        <input type="text" (input)="validandoInput($event)" id="txtEventoParametro">
+        <button disabled id="btnValidar" (click)="validar()">Botao</button>
+    </div>
+    <p id="resposta" class="resposta"></p>
+</body>
