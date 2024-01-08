@@ -1,0 +1,13 @@
+.container-baixo-direita-titulo {
+  border-bottom: 2px solid gray;
+  padding-left: 10px;
+}
+
+.container-baixo-direita-conteudo {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 5px;
+}

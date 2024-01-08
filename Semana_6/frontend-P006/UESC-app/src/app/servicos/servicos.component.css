@@ -1,0 +1,13 @@
+.container-baixo-esquerda-titulo {
+  border-bottom: 2px solid gray;
+  padding-left: 10px;
+}
+
+.container-baixo-esquerda-conteudo {
+  padding: 10px;
+  line-height: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
