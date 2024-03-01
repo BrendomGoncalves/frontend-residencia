@@ -1,0 +1,22 @@
+<div class="form-container">
+    <form [formGroup]="formExercicio" id="formExercicio" #formulario="ngForm">
+        <label for="EstacaoClimatica">
+            <p>Nome da Estação climática:</p>
+            <input type="text" name="EstacaoClimatica" id="EstacaoClimatica" formControlName="EstacaoClimatica">
+        </label>
+        <label for="EmailNotificacao">
+            <p>Email de Notificação:</p>
+            <input type="text" name="EmailNotificacao" id="EmailNotificacao" formControlName="EmailNotificacao" ngModel email>
+            <span *ngIf="!EmailNotificacao.valid && EmailNotificacao.touched">Entre com um email válido!</span>
+        </label>
+        <label for="Localizacao">
+            <p>Localização:</p>
+            <input type="text" name="Localizacao" id="Localizacao" formControlName="Localizacao">
+        </label>
+        <label for="StatusInstalacao">
+            <p>Status de Instalacao</p>
+            <input type="text" name="StatusInstalacao" id="StatusInstalacao" formControlName="StatusInstalacao">
+        </label>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
