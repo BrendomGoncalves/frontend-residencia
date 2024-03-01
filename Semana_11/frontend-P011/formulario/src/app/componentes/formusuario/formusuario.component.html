@@ -1,0 +1,76 @@
+<form [formGroup]="usuarioFormulario" (ngSubmit)="enviaFormulario()">
+  <h1>User Registration</h1>
+  <div>
+    <label for="nome">Forename:</label>
+    <input type="text" formControlName="nome" name="nome">
+    <div>
+      <span *ngIf="usuarioFormulario.get('nome')?.invalid && usuarioFormulario.get('nome')?.touched">Name is required!</span>
+    </div>
+  </div>
+  <div>
+    <label for="nomeCompleto">Full name</label>
+    <input type="text" formControlName="nomeCompleto" name="nomeCompleto">
+    <div>
+      <span
+        *ngIf="usuarioFormulario.get('nomeCompleto')?.errors?.['nomeInvalido'] && usuarioFormulario.get('nomeCompleto')?.touched">Name is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" formControlName="email" name="email">
+    <div>
+      <span *ngIf="usuarioFormulario.get('email')?.invalid && usuarioFormulario.get('email')?.touched">Email is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="senha">Password</label>
+    <input type="password" formControlName="senha" name="senha">
+    <div>
+      <span *ngIf="usuarioFormulario.get('senha')?.invalid && usuarioFormulario.get('senha')?.touched">Password is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="telefone">Telephone</label>
+    <input type="text" formControlName="telefone" name="telefone">
+    <div>
+      <span *ngIf="usuarioFormulario.get('telefone')?.invalid && usuarioFormulario.get('telefone')?.touched">Phone is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="dataAniversario">Anniversary date</label>
+    <input type="date" formControlName="dataAniversario" name="endereco">
+    <div>
+      <span
+        *ngIf="usuarioFormulario.get('dataAniversario')?.errors?.['dataInvalida'] && usuarioFormulario.get('dataAniversario')?.touched">Date is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="endereco">Address</label>
+    <input type="text" formControlName="endereco" name="endereco">
+    <div>
+      <span
+        *ngIf="usuarioFormulario.get('endereco')?.errors?.['nomeInvalido'] && usuarioFormulario.get('endereco')?.touched">Address is required</span>
+    </div>
+  </div>
+  <div>
+    <label for="dataAniversario">Sex</label>
+    <select formControlName="sexo" name="sexo">
+      <option value="Masculino">Male</option>
+      <option value="Feminino">Female</option>
+    </select>
+    <div>
+      <span *ngIf="usuarioFormulario.get('sexo')?.invalid && usuarioFormulario.get('sexo')?.touched">Sexo is required!</span>
+    </div>
+  </div>
+  <div>
+    <label for="profissao">Professions</label>
+    <select formControlName="profissao" name="profissao">
+      <option value="Desenvolvedor Java">DotNet Developer</option>
+      <option value="Desenvolvedor FrontEnd">Angular Developer</option>
+    </select>
+    <div>
+      <span *ngIf="usuarioFormulario.get('profissao')?.invalid && usuarioFormulario.get('profissao')?.touched">Profession is mandatory</span>
+    </div>
+  </div>
+  <button type="submit">Send</button>
+</form>
