@@ -1,0 +1,15 @@
+<form (ngSubmit)="cadastrar()">
+  <label>Cliente:</label>
+  <input type="text" [(ngModel)]="novoAtendimento.cliente" required>
+
+  <label>Pet:</label>
+  <input type="text" [(ngModel)]="novoAtendimento.pet" required>
+
+  <label>Tipo de Serviço:</label>
+  <input type="text" [(ngModel)]="novoAtendimento.tipoServico" required>
+
+  <label>Data:</label>
+  <input type="date" [(ngModel)]="novoAtendimento.data" required>
+
+  <button type="submit">Cadastrar</button>
+</form>
