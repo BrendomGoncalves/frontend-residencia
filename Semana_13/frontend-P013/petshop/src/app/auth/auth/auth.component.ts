@@ -36,7 +36,7 @@ export class AuthComponent {
 
     if (this.modoLogin) {
       this.authService.loginUser(email, password).subscribe(
-        responseData => {
+        (responseData: any) => {
           console.log(responseData);
           this.estaCarregando = false;
           this.temErro = false;
@@ -45,13 +45,13 @@ export class AuthComponent {
       );
     } else {
       this.authService.signupUser(email, password).subscribe(
-        responseData => {
+        (responseData: any) => {
           console.log(responseData);
           this.estaCarregando = false;
           this.temErro = false;
           this.router.navigate(['/pecas']);
         },
-        error => {
+        (error: { error: { error: { message: any; }; }; }) => {
           console.log(error);
           switch (error.error.error.message) {
             case 'EMAIL_EXISTS':
