@@ -1,0 +1,72 @@
+<div>
+  <form [formGroup]="suinoForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="brincoAnimal">Brinco do Animal:</label>
+      <input type="text" id="brincoAnimal" formControlName="brincoAnimal">
+      <div
+        *ngIf="suinoForm.get('brincoAnimal').invalid && (suinoForm.get('brincoAnimal').touched || suinoForm.submitted)">
+        <small class="text-warning" *ngIf="suinoForm.get('brincoAnimal').errors.required">Brinco do animal é
+          obrigatório!</small>
+        <small class="text-danger" *ngIf="suinoForm.get('brincoAnimal').errors.pattern">Brinco do animal deve ser um
+          número!</small>
+      </div>
+    </div>
+    <div>
+      <label for="brincoPai">Brinco do Pai:</label>
+      <input type="text" id="brincoPai" formControlName="brincoPai">
+      <div *ngIf="suinoForm.get('brincoPai').invalid && (suinoForm.get('brincoPai').touched || suinoForm.submitted)">
+        <small class="text-warning" *ngIf="suinoForm.get('brincoPai').errors.required">Brinco do pai é obrigatório!</small>
+        <small class="text-warning" *ngIf="suinoForm.get('brincoPai').errors.pattern">Brinco do pai deve ser um
+          número!</small>
+      </div>
+    </div>
+    <div>
+      <label for="brincoMae">Brinco da Mãe:</label>
+      <input type="text" id="brincoMae" formControlName="brincoMae">
+      <div *ngIf="suinoForm.get('brincoMae').invalid && (suinoForm.get('brincoMae').touched || suinoForm.submitted)">
+        <small class="text-warning" *ngIf="suinoForm.get('brincoMae').errors.required">Brinco da mãe é obrigatório!</small>
+        <small class="text-warning" *ngIf="suinoForm.get('brincoMae').errors.pattern">Brinco da mãe deve ser um número!</small>
+      </div>
+    </div>
+    <div>
+      <label for="dataNascimento">Data de Nascimento:</label>
+      <input type="date" id="dataNascimento" formControlName="dataNascimento">
+      <div *ngIf="suinoForm.get('dataNascimento').invalid && (suinoForm.get('dataNascimento').touched || suinoForm.submitted)">
+        <small class="text-warning" *ngIf="suinoForm.get('dataNascimento').errors.required">Data de nascimento é obrigatória!</small>
+      </div>
+    </div>
+    <div>
+      <label for="dataSaida">Data de Saída:</label>
+      <input type="date" id="dataSaida" formControlName="dataSaida">
+      <div *ngIf="suinoForm.get('dataSaida').invalid && (suinoForm.get('dataSaida').touched || suinoForm.submitted)">
+        <small class="text-warning" *ngIf="suinoForm.get('dataSaida').errors.required">Data de saída é obrigatória!</small>
+      </div>
+    </div>
+    <div>
+      <label for="status">Status:</label>
+      <select id="status" formControlName="status">
+        <option value="" disabled selected>Selecione o status</option>
+        <option value="Ativo">Ativo</option>
+        <option value="Vendido">Vendido</option>
+        <option value="Morto">Morto</option>
+      </select>
+      <div *ngIf="suinoForm.get('status').invalid && (suinoForm.get('status').touched || suinoForm.submitted)">
+        <small class="text-warning" *ngIf="suinoForm.get('status').errors.required">Status é obrigatório!</small>
+        <small class="text-warning" *ngIf="suinoForm.get('status').errors.pattern">Status deve ser Ativo, Vendido ou Morto!</small>
+      </div>
+    </div>
+    <div>
+      <label for="sexo">Sexo:</label>
+      <select id="sexo" formControlName="sexo">
+        <option value="" disabled selected>Selecione o sexo</option>
+        <option value="M">Macho</option>
+        <option value="F">Fêmea</option>
+      </select>
+      <div *ngIf="suinoForm.get('sexo').invalid && (suinoForm.get('sexo').touched || suinoForm.submitted)">
+        <small class="text-warning" *ngIf="suinoForm.get('sexo').errors.required">Sexo é obrigatório!</small>
+        <small class="text-warning" *ngIf="suinoForm.get('sexo').errors.pattern">Sexo deve ser Macho ou Femea!</small>
+      </div>
+    </div>
+    <button type="submit">Cadastrar</button>
+  </form>
+</div>

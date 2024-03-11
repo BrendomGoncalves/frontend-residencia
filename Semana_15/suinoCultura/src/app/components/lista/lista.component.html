@@ -1,0 +1,119 @@
+<h1>Lista de Suinos</h1>
+<table class="table table-secondary">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Brinco Animal</th>
+      <th scope="col">Brinco Pai</th>
+      <th scope="col">Brinco Mãe</th>
+      <th scope="col">Data de Nascimento</th>
+      <th scope="col">Data de Saída</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="suinos.length == 0">
+      <td colspan="8">Nenhum suino cadastrado!</td>
+    </tr>
+    <tr *ngFor="let suino of suinos">
+      <td>{{suino.brincoAnimal}}</td>
+      <td>{{suino.brincoPai}}</td>
+      <td>{{suino.brincoMae}}</td>
+      <td>{{suino.dataNascimento}}</td>
+      <td>{{suino.dataSaida}}</td>
+      <td>{{suino.sexo}}</td>
+      <td>{{suino.status}}</td>
+      <td>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample" (click)="selecionarSuino(suino)">
+          Editar
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="offcanvasExampleLabel" style="color: brown;">Editar Suino</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <form [formGroup]="editarSuino" (ngSubmit)="onSubmit()">
+              <div>
+                <label for="brincoAnimal" class="form-label">Brinco Animal</label>
+                <input type="text" class="form-control" id="brincoAnimal" formControlName="brincoAnimal"
+                  [(ngModel)]="suinoSelecionado.brincoAnimal">
+                <div
+                  *ngIf="editarSuino.get('brincoAnimal').invalid && (editarSuino.get('brincoAnimal').touched || editarSuino.submitted)">
+                  <small class="text-warning" *ngIf="editarSuino.get('brincoAnimal').errors.required">Brinco do animal é
+                    obrigatório!</small>
+                  <small class="text-danger" *ngIf="editarSuino.get('brincoAnimal').errors.pattern">Brinco do animal
+                    deve
+                    ser um
+                    número!</small>
+                </div>
+              </div>
+              <div>
+                <label for="brincoPai">Brinco do Pai:</label>
+                <input type="text" id="brincoPai" formControlName="brincoPai" [(ngModel)]="suinoSelecionado.brincoPai">
+                <div *ngIf="editarSuino.get('brincoPai').invalid && (editarSuino.get('brincoPai').touched || editarSuino.submitted)">
+                  <small class="text-warning" *ngIf="editarSuino.get('brincoPai').errors.required">Brinco do pai é obrigatório!</small>
+                  <small class="text-warning" *ngIf="editarSuino.get('brincoPai').errors.pattern">Brinco do pai deve ser um
+                    número!</small>
+                </div>
+              </div>
+              <div>
+                <label for="brincoMae">Brinco da Mãe:</label>
+                <input type="text" id="brincoMae" formControlName="brincoMae" [(ngModel)]="suinoSelecionado.brincoMae">
+                <div *ngIf="editarSuino.get('brincoMae').invalid && (editarSuino.get('brincoMae').touched || editarSuino.submitted)">
+                  <small class="text-warning" *ngIf="editarSuino.get('brincoMae').errors.required">Brinco da mãe é obrigatório!</small>
+                  <small class="text-warning" *ngIf="editarSuino.get('brincoMae').errors.pattern">Brinco da mãe deve ser um número!</small>
+                </div>
+              </div>
+              <div>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" formControlName="dataNascimento"
+                  [(ngModel)]="suinoSelecionado.dataNascimento">
+                  <div *ngIf="editarSuino.get('dataNascimento').invalid && (editarSuino.get('dataNascimento').touched || editarSuino.submitted)">
+                    <small class="text-warning" *ngIf="editarSuino.get('dataNascimento').errors.required">Data de nascimento é obrigatória!</small>
+                  </div>
+              </div>
+              <div>
+                <label for="dataSaida">Data de Saída:</label>
+                <input type="date" id="dataSaida" formControlName="dataSaida" [(ngModel)]="suinoSelecionado.dataSaida">
+                <div *ngIf="editarSuino.get('dataSaida').invalid && (editarSuino.get('dataSaida').touched || editarSuino.submitted)">
+                  <small class="text-warning" *ngIf="editarSuino.get('dataSaida').errors.required">Data de saída é obrigatória!</small>
+                </div>
+              </div>
+              <div>
+                <label for="status">Status:</label>
+                <select id="status" formControlName="status" [(ngModel)]="suinoSelecionado.status">
+                  <option value="" disabled selected>Selecione o status</option>
+                  <option value="Ativo">Ativo</option>
+                  <option value="Vendido">Vendido</option>
+                  <option value="Morto">Morto</option>
+                </select>
+                <div *ngIf="editarSuino.get('status').invalid && (editarSuino.get('status').touched || editarSuino.submitted)">
+                  <small class="text-warning" *ngIf="editarSuino.get('status').errors.required">Status é obrigatório!</small>
+                  <small class="text-warning" *ngIf="editarSuino.get('status').errors.pattern">Status deve ser Ativo, Vendido ou Morto!</small>
+                </div>
+              </div>
+              <div>
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" formControlName="sexo" [(ngModel)]="suinoSelecionado.sexo">
+                  <option value="" disabled selected>Selecione o sexo</option>
+                  <option value="M">Macho</option>
+                  <option value="F">Fêmea</option>
+                </select>
+                <div *ngIf="editarSuino.get('sexo').invalid && (editarSuino.get('sexo').touched || editarSuino.submitted)">
+                  <small class="text-warning" *ngIf="editarSuino.get('sexo').errors.required">Sexo é obrigatório!</small>
+                  <small class="text-warning" *ngIf="editarSuino.get('sexo').errors.pattern">Sexo deve ser Macho ou Femea!</small>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <button class="btn btn-danger" (click)="selecionarSuino(suino)"
+          (click)="excluir(suinoSelecionado.key)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

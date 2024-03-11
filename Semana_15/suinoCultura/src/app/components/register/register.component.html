@@ -1,0 +1,12 @@
+<h1 style="color: white;">Cadastrar Novo Usuário</h1>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" style="color: white;">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nome de Usuário:</label>
+    <input type="email" class="form-control" formControlName="username" placeholder="Username" autocomplete="current-username">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Senha:</label>
+    <input type="password" formControlName="password" class="form-control" placeholder="Password" autocomplete="current-password">
+  </div>
+  <button type="submit" class="btn btn-success">Registrar</button>
+</form>
