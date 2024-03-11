@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "frontend15-99a70",
+    "public": "./dist/suino-cultura",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "src/index.html"
+      }
+    ]
+  }
+}
