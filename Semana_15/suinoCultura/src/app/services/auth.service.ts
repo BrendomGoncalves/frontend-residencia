@@ -9,7 +9,7 @@ export class AuthService {
   constructor() {}
 
   register(user: { username: string, password: string }) {
-    user.username = CryptoJS.AES.encrypt(user.password, user.username).toString();  
+    user.password = CryptoJS.AES.encrypt(user.password, user.username).toString();  
     
     const usersRef = firebase.database().ref('/users');
   
@@ -27,13 +27,21 @@ export class AuthService {
     if(!credentials.username || !credentials.password) {
       throw new Error('Usuário e senha são obrigatórios');
     } else {
-      credentials.username = CryptoJS.AES.encrypt(credentials.password, credentials.username).toString();  
       return firebase.database().ref('/users').orderByChild('username').equalTo(credentials.username).once('value')
         .then(snapshot => {
           if (snapshot.exists()) {
-            localStorage.setItem('authToken', 'token');
+            snapshot.forEach((childSnapshot) => {
+              var childData = childSnapshot.val();
+              var bytes  = CryptoJS.AES.decrypt(childData.password, credentials.username);
+              var decryptedPassword = bytes.toString(CryptoJS.enc.Utf8);
+              if (decryptedPassword === credentials.password) {
+                localStorage.setItem('authToken', 'token');
+              } else {
+                throw new Error('Senha inválida');
+              }
+            });
           } else {
-            throw new Error('Usuário ou senha inválidos');
+            throw new Error('Usuário inválido');
           }
         });
     }
