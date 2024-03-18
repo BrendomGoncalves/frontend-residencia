@@ -35,7 +35,7 @@ export class AuthService {
               var bytes  = CryptoJS.AES.decrypt(childData.password, credentials.username);
               var decryptedPassword = bytes.toString(CryptoJS.enc.Utf8);
               if (decryptedPassword === credentials.password) {
-                localStorage.setItem('authToken', 'token');
+                localStorage.setItem('authToken', credentials.username);
               } else {
                 throw new Error('Senha inválida');
               }

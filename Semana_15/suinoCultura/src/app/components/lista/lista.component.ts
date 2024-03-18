@@ -5,17 +5,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-interface Suino{
-  key: string;
-  brincoAnimal: number;
-  brincoPai: number;
-  brincoMae: number;
-  dataNascimento: string;
-  dataSaida: string;
-  status: string;
-  sexo: string;
-}
-
 @Component({
   selector: 'app-lista',
   standalone: true,
