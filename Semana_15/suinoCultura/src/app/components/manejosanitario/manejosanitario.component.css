@@ -1,0 +1,14 @@
+h1{
+  color: white;
+  text-align: center;
+}
+
+.sessao-principal{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+#aviso-atividade{
+  color: yellow;
+}

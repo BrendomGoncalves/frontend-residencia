@@ -30,11 +30,6 @@ export class CadastroComponent {
     if (this.suinoForm.valid) {
       firebase.database().ref('/suinos').push(this.suinoForm.value)
         .then((response: any) => {
-          var userSuino = [
-            this.suinoForm.value.brincoAnimal,
-            localStorage.getItem('authToken')
-          ]
-          firebase.database().ref('/usersuinos').push(userSuino);
           console.log('Sucesso!', response);
           this.suinoForm.reset();
           alert('Suíno cadastrado com sucesso!');

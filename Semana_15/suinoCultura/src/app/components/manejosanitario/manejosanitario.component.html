@@ -1,0 +1,24 @@
+<div class="sessao-principal">
+  <h1>Sessão</h1>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" placeholder="Nome da Sessão">
+    <label for="floatingInput">Nome da sessão</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="date" class="form-control" placeholder="Data da Sessão">
+    <label for="floatingInput">Data da sessão</label>
+  </div>
+  <select class="form-select mb-3" size="4" multiple>
+    <option selected disabled>Segure a tecla CTRL para selecionar vários</option>
+    <option *ngFor="let suino of suinos" [value]="suino.brincoAnimal">{{suino.brincoAnimal}}</option>
+  </select>
+  <p id="aviso-atividade"><b>OBS:</b> Digite a atividade e tecle ENTER para inserir mais.</p>
+  <div class="form-floating mb-2">
+    <input class="form-control" type="text" (keyup.enter)="storeWord($event)" placeholder="Digite o nome do evento">
+    <label for="floatingInput">Atividades Planejadas</label>
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngIf="words.length == 0">Nenhuma atividade adicionada</li>
+    <li class="list-group-item" *ngFor="let word of words">{{word}}</li>
+</ul>
+</div>
