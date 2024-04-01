@@ -1,0 +1,38 @@
+<div class="card" style="width: 25rem;">
+  <img src="{{paisForm.flags.png}}" class="card-img-top" alt="Bandeira de {{paisForm.name.common}}">
+  <div class="card-body">
+    <h2 style="font-weight: bold;">{{paisForm.name.common}}</h2>
+    <p>{{paisForm.name.official}}</p>
+    <hr>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Linguas
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div *ngFor="let key of objectKeys(paisForm.languages)">
+              <p style="padding-left: 12px;">{{paisForm.languages[key]}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Moedas
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div *ngFor="let key of objectKeys(paisForm.currencies)">
+              <p style="padding-left: 12px;">{{paisForm.currencies[key].name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
