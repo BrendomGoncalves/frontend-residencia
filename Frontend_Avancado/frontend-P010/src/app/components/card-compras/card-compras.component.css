@@ -1,0 +1,58 @@
+.compras {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 25px;
+}
+
+.titulo-secao {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.produtos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
+  gap: 10px;
+}
+
+.produtos-imagem {
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 70px;
+    height: 80px;
+  }
+}
+
+.produtos-descricao {
+  width: 100%;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.estrelas img {
+  width: 20px;
+  height: 20px;
+}
+
+.botao-adicionar{
+  font-size: 10pt;
+  width: 80%;
+  height: 30px;
+  border-radius: 15px;
+}

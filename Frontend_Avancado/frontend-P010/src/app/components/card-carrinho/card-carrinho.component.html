@@ -1,0 +1,45 @@
+<div class="titulo">
+  <h4>Carrinho de Compras</h4>
+</div>
+<div class="produto" *ngFor="let p of produtosCarrinho">
+  <div class="produto-select">
+    <input type="checkbox">
+  </div>
+  <div class="produto-imagem">
+    <img src="{{p.image}}" alt="imagem de um produto teste" [width]="120">
+  </div>
+  <div class="produto-descricao">
+    <div class="produto-descricao-topo">
+      <div class="produto-descricao-topo-e">
+        <h5>{{ p.title }}</h5>
+        <label><b style="color:white;background-color: #C45500;padding: 3px;">{{p.ranking}}º em mais vendido</b> em Cafeteiras de Filtro de Café Coado</label> <br>
+        <label>Em Estoque</label> <br>
+        <img id="selo-prime" src="../../../assets/amazonPrime.png" alt="icone do selo prime">
+        <div class="produto-presente">
+          <input type="checkbox">
+          <label>Esta pedido é pra presente</label>
+        </div>
+        <label><b>Tamanho:</b> 1,2kg</label>
+      </div>
+      <div class="produto-descricao-topo-d">
+        <h5>R$ 113,62</h5>
+        <label>à vista no Pix e boleto ou em até 2x de R$ 59,73 sem juros</label>
+      </div>
+    </div>
+    <div class="produto-descricao-baixo">
+      <button style="border: 1px solid gray;width: 30px;height: 30px" class="btn btn-light btn-sm">+</button>
+      <p>{{p.quantidade}}</p>
+      <button style="border: 1px solid gray;width: 30px;height: 30px" class="btn btn-light btn-sm">-</button>
+      <label>|</label>
+      <a href="#">Excluir</a>
+      <label>|</label>
+      <a href="#">Salvar para mais tarde</a>
+      <label>|</label>
+      <a href="#">Compartilhar</a>
+    </div>
+  </div>
+</div>
+<div class="produtos-subtotal">
+  <p>Subtotal (1 produto): <b>R$ 113,62</b></p>
+</div>
+

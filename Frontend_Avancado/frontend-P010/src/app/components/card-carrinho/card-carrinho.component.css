@@ -1,0 +1,96 @@
+label{
+  font-size: 10pt;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.titulo{
+  border-bottom: 1px solid #aaa;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.produto{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.produto-select{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+}
+
+.produto-imagem{
+  text-align: center;
+  width: 200px;
+}
+
+.produto-descricao{
+  width: 100%;
+}
+
+.produto-descricao-topo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.produto-descricao-topo-e{
+  width: 70%;
+}
+
+.produto-descricao-topo-d{
+  width: 30%;
+  text-align: right;
+}
+
+#selo-prime{
+  width: 50px;
+  height: 25px;
+}
+
+.produto-presente{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.produto-descricao-baixo{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.produto-quantidade{
+  font-family: Arial, serif;
+  font-size: 10pt;
+  border-radius: 5px;
+  background-color: #F0F2F2;
+
+  option{
+    text-align: center;
+  }
+}
+
+.produtos-subtotal{
+  margin-top: 15px;
+  border-top: 1px solid #aaa;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: start;
+  p{
+    font-size: 12pt;
+  }
+}

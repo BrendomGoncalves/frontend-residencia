@@ -1,0 +1,22 @@
+.subtotal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+p{
+  font-size: 14pt;
+}
+
+.produto-presente{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.botao-fechar-pedido{
+  width: 90%;
+}

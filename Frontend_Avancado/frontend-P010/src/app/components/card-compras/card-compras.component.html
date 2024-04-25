@@ -1,0 +1,21 @@
+<div class="compras">
+  <p class="titulo-secao">Adicione Produtos ao Carrinho</p>
+  <div class="produtos" *ngFor="let p of produtos">
+    <div class="produtos-imagem">
+      <img src="{{p.image}}" alt="imagem de produto teste">
+    </div>
+    <div class="produtos-descricao">
+      <label>{{ p.title }}</label>
+      <div class="estrelas">
+        <img src="../../../assets/star-checked.png" alt="icon estrela">
+        <img src="../../../assets/star-checked.png" alt="icon estrela">
+        <img src="../../../assets/star-checked.png" alt="icon estrela">
+        <img src="../../../assets/star-checked.png" alt="icon estrela">
+        <img src="../../../assets/star.png" alt="icon estrela">
+      </div>
+      <label>R$ {{ p.price.toFixed(2) }}</label>
+      <img src="../../../assets/amazonPrime.png" [width]="50" alt="icone prime da amazon">
+      <button class="btn btn-warning botao-adicionar" (click)="colocarNoCarrinho(p)">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+</div>
